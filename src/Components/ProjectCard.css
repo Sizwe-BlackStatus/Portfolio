@@ -1,18 +1,75 @@
 .card-container {
-    width: 480px;
-    padding: 20px;
+  width: 480px;
+  padding: 20px;
+  cursor: pointer;
 }
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: "";
+  display: block;
+  background-color: #000;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: scale(0);
+  transition: transform 0.8s ease-in-out;
+}
+
+.card:hover::after {
+  transform: scale(2.2);
+}
+
+.card-text {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  color: white;
+  transition: opacity 0.2s ease-in-out, transform 1s ease;
+  transition-delay: 0.3s;
+  opacity: 0;
+}
+
+.card:hover .card-text {
+  opacity: 1;
+}
+
+.project-name {
+  transform: translate3d(0, -2px, 0);
+  transition: transform 0.3s, opacity;
+}
+
+.project-type {
+  transform: translate3d(0, 2px, 0);
+  transition: transform 0.3s, opacity;
+}
+
+.card:hover .project-name {
+  transform: translate3d(0, 0, 0);
+}
+
+.card:hover .project-type {
+  transform: translate3d(0, 0, 0);
+}
+
 .card-container img {
-    object-fit: cover;
-    width: 100%;
-    height: 200px;
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
 }
 
 @media screen and (max-width: 500px) {
-    .card-container {
-        width: 316px;
-    }
-    .card-container img {
-        height: 123px;
-    }
+  .card-container {
+    width: 316px;
+  }
+  .card-container img {
+    height: 123px;
+  }
 }

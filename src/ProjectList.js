@@ -63,6 +63,13 @@ const projectList = [
         type: 'Back-End',
         project_image: 'https://i.pinimg.com/originals/1c/54/f7/1c54f7b06d7723c21afc5035bf88a5ef.png'
     },
+    {
+        id: 10,
+        project_name: 'Dear-Diary',
+        site: 'https://deardiary-blackstatus.netlify.app/',
+        type: 'Full-Stack',
+        project_image: '../project-images/Screenshot (137).png'
+    },
 ]
 
 export default projectList
